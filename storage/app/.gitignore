@@ -2,3 +2,6 @@
 !public/
 !.gitignore
 /node_modules
+
+*
+!.gitignore
