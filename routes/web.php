@@ -45,3 +45,8 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function () {
     Route::resource('pages', 'PagesController');
     Route::resource('galleries', 'GalleryController');
 });
+
+Auth::routes([
+    'verify' => true,
+    'register' => false
+]);
