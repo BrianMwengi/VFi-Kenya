@@ -2,8 +2,10 @@
 
 use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\Route;
+use App\Http\Livewire;
 
 use App\Post;
+
 
 
 
@@ -23,8 +25,6 @@ use App\Post;
     return view('welcome');
 });*/
  
-
-
 Auth::routes();
 Route::get('/search', 'PagesController@search');
 Route::get('/', 'PagesController@index');
@@ -36,6 +36,10 @@ Route::get('event/{slug}', 'PagesController@event')->name('event');
 Route::get('contact', 'PagesController@showContactForm')->name('contact.show');
 Route::post('contact', 'PagesController@submitContactForm')->name('contact.submit');
 
+Route::post('/comment/store', 'CommentController@store')->name('comment.add');
+Route::post('/reply/store', 'CommentController@replyStore')->name('reply.add');
+
+
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function () {
@@ -45,6 +49,7 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function () {
     Route::resource('pages', 'PagesController');
     Route::resource('galleries', 'GalleryController');
 });
+
 
 Auth::routes([
     'verify' => true,

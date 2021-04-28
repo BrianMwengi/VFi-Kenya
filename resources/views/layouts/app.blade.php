@@ -25,22 +25,24 @@
     <link rel="stylesheet" href="{{ asset('css/flaticon.css') }}">
     <link rel="stylesheet" href="{{ asset('css/icomoon.css') }}">
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
-   
+
+    
+
   </head>
 
   <body>
    
         @include('inc.navbar')
         
+        
             @yield('content')
-       
 
     <footer class="ftco-footer ftco-bg-dark ftco-section">
       <div class="container">
         <div class="row mb-5">
           <div class="col-md">
             <div class="ftco-footer-widget mb-4">
-              <h2 class="logo"><!--<i class="flaticon-cross">--><a href="index.html"></i><span>VFi</span><span>Nairobi</span></a></h2>
+              <h2 class="logo"><!--<i class="flaticon-cross">--><a href="#"></i><span>VFi</span><span>Nairobi</span></a></h2>
               <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
             </div>
           </div>

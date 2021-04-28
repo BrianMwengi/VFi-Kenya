@@ -63,8 +63,10 @@
             
           <div class="pt-5 mt-5">
            
-            <!--<h3 class="mb-5">6 Comments</h3>
-              <ul class="comment-list">
+            <h3 class="mb-5">Comments</h3>
+
+            @include('pages.partials.replies', ['comments' => $post->comments, 'post_id' => $post->id])
+              <!--<ul class="comment-list">
                 <li class="comment">
                   <div class="vcard bio">
                     <img src="images/person_1.jpg" alt="Image placeholder">
@@ -144,18 +146,17 @@
                   </div>-->
                 </li>
               </ul>
-
-              
-             
+          
               <div class="comment-form-wrap pt-5">
                 <h3 class="mb-5">Leave a comment</h3>
-                <div>  @comments(['model' => $post])</div>
-                 <form id="comment-form" action="{{ route('comments.store') }}" method="post" class="p-5 bg-light">
-                   {{ csrf_field() }}
+                <div>  </div>
+                 <form id="comment-form" action="{{ route('comment.add') }}" method="post" class="p-5 bg-light">
+                   @csrf
                   
                   <div class="form-group">
                     <label for="name">Name *</label>
                     <input type="text"  name="comment" class="form-control" id="name">
+                    <input type="hidden" name="post_id" value="{{ $post->id }}" />
                   </div>
                   <div class="form-group">
                     <label for="email">Email *</label>
