@@ -25,7 +25,7 @@ use App\Post;
     return view('welcome');
 });*/
  
-Auth::routes();
+//Auth::routes();
 Route::get('/search', 'PagesController@search');
 Route::get('/', 'PagesController@index');
 Route::get('/blog', 'PagesController@blog');
@@ -40,6 +40,7 @@ Route::post('/comment/store', 'CommentController@store')->name('comment.add');
 Route::post('/reply/store', 'CommentController@replyStore')->name('reply.add');
 
 
+
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function () {
@@ -51,7 +52,10 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function () {
 });
 
 
-Auth::routes([
-    'verify' => true,
-    'register' => false
-]);
+//Auth::routes([
+  //  'verify' => true,
+    //'register' => false
+//]);
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
