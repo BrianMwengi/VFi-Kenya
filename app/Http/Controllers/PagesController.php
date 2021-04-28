@@ -17,9 +17,9 @@ class PagesController extends Controller
 {
     public function index(){
 
-        $categories = Category::orderBy('name', 'ASC')->where('is_published', '1')->get();
-        $posts = Post::orderBy('id', 'DESC')->where('post_type', 'post')->where('is_published', '1')->paginate(3);
-        $events = Event::orderBy('id', 'DESC')->where('event_type', 'event')->where('is_published', '1')->paginate(2);
+        //$categories = Category::orderBy('name', 'ASC')->where('is_published', '1')->get();
+        //$posts = Post::orderBy('id', 'DESC')->where('post_type', 'post')->where('is_published', '1')->paginate(3);
+        //$events = Event::orderBy('id', 'DESC')->where('event_type', 'event')->where('is_published', '1')->paginate(2);
         return view('pages.index', compact('posts','categories', 'events'));
         
     }
