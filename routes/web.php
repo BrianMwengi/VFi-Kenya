@@ -25,10 +25,12 @@ use App\Post;
     return view('welcome');
 });*/
  
-//Auth::routes();
+Auth::routes();
 Route::get('/search', 'PagesController@search');
 Route::get('/', 'PagesController@index');
 Route::get('/blog', 'PagesController@blog');
+Route::get('/about', 'PagesController@about');
+Route::get('/sermons', 'PagesController@sermons');
 Route::get('/events', 'PagesController@events');
 Route::get('category/{slug}', 'PagesController@category')->name('category');
 Route::get('post/{slug}', 'PagesController@post')->name('post');
@@ -52,10 +54,10 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function () {
 });
 
 
-//Auth::routes([
-  //  'verify' => true,
-    //'register' => false
-//]);
+Auth::routes([
+    'verify' => true,
+    'register' => false
+]);
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');

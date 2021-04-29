@@ -1,10 +1,5 @@
-
+@extends('layouts.app')
 @section('content')
-  <body>
-    
-	
-    <!-- END nav -->
-
     <section id="home" class="video-hero js-fullheight" style="height: 700px; background-image: url(images/bg_1.jpg);  background-size:cover; background-position: center center;background-attachment:fixed;" data-section="home">
 			<div class="overlay js-fullheight"></div>
 			<div class="container">
@@ -266,11 +261,4 @@
     		</div>
     	</div>
     </section>
-
-   
-
-    <!--footer section-->
-    
-  </body>
-</html>
 @endsection

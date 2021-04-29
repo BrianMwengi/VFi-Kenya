@@ -92,7 +92,7 @@ class PagesController extends Controller
 
     public function sermons(){
        
-        return view('pages.event');
+        return view('pages.sermons');
     }
    
     public function showContactForm()
